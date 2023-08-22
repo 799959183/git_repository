@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dabb22a6-690b-4a2b-9d54-f528e115e048" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/KeyDoc" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/KeyDoc/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/KeyDoc/license-config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/keyTestService/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/keyTestService/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/keyTestService/license-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/keyTestService/license-config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/zifangsky/ServerDemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/zifangsky/ServerDemoApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="E:\maven\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../maven/apache-maven-3.8.6-bin/apache-maven-3.8.6" />
+        <option name="userSettingsFile" value="E:\maven\apache-maven-3.8.6-bin\apache-maven-3.8.6\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2DgpNuCkZNXIkz1mEq9tiKA5gw7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/ServerDemo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.fileTypes",
+    "spring.configuration.checksum": "9afafbec4bab99ad3c86634cc39b7f18",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ServerDemo\src\main\resources\config\KDTRService" />
+      <recent name="E:\ServerDemo\src\main\resources\config\keyTest" />
+      <recent name="E:\ServerDemo\src\main\resources\config\KeyDoc" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ServerDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="serverdemo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.zifangsky.ServerDemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\hll\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\ServerDemo" />
+          <option name="myCopyRoot" value="E:\ServerDemo" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\ServerDemo" />
+          <option name="myCopyRoot" value="E:\ServerDemo" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dabb22a6-690b-4a2b-9d54-f528e115e048" name="Default Changelist" comment="" />
+      <created>1661130544416</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661130544416</updated>
+      <workItem from="1661130546776" duration="2042000" />
+      <workItem from="1661218027619" duration="444000" />
+      <workItem from="1662458008015" duration="1092000" />
+      <workItem from="1662459690164" duration="378000" />
+      <workItem from="1662511765104" duration="377000" />
+      <workItem from="1662518853023" duration="1125000" />
+      <workItem from="1662520264645" duration="645000" />
+      <workItem from="1662688031328" duration="276000" />
+      <workItem from="1665708825993" duration="1694000" />
+      <workItem from="1665713131865" duration="4000" />
+      <workItem from="1665713146928" duration="276000" />
+      <workItem from="1666257471360" duration="27000" />
+      <workItem from="1666583189594" duration="793000" />
+      <workItem from="1666591487618" duration="949000" />
+      <workItem from="1669797736966" duration="163000" />
+      <workItem from="1669803233913" duration="673000" />
+      <workItem from="1669868244787" duration="134000" />
+      <workItem from="1669973446145" duration="144000" />
+      <workItem from="1670813322622" duration="865000" />
+      <workItem from="1673399208226" duration="1058000" />
+      <workItem from="1673409479924" duration="40000" />
+      <workItem from="1674965590802" duration="339000" />
+      <workItem from="1675301444512" duration="352000" />
+      <workItem from="1675317429487" duration="12000" />
+      <workItem from="1678188391006" duration="269000" />
+      <workItem from="1678188674639" duration="136000" />
+      <workItem from="1678189087339" duration="713000" />
+      <workItem from="1678261742644" duration="959000" />
+      <workItem from="1692540000884" duration="1000" />
+      <workItem from="1692540166461" duration="1000" />
+      <workItem from="1692541517435" duration="41000" />
+      <workItem from="1692625600764" duration="623000" />
+    </task>
+    <task id="LOCAL-00001" summary="【提交类型】:BUG&#10;【quickbug_Id】:&#10;【问题描述】:&#10;【程序描述】:&#10;【修改内容】:新增KD,KT产品license文件目录">
+      <created>1661218456700</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661218456700</updated>
+    </task>
+    <task id="LOCAL-00002" summary="【提交类型】:BUG&#10;【quickbug_Id】:&#10;【问题描述】:&#10;【程序描述】:&#10;【修改内容】:更细kd,kt产品目录">
+      <created>1662512139451</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662512139451</updated>
+    </task>
+    <task id="LOCAL-00003" summary="【提交类型】:BUG&#10;【quickbug_Id】:&#10;【问题描述】:&#10;【程序描述】:&#10;【修改内容】:更新配置文件">
+      <created>1662688290768</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1662688290768</updated>
+    </task>
+    <task id="LOCAL-00004" summary="【提交类型】:BUG&#10;【quickbug_Id】:&#10;【问题描述】:&#10;【程序描述】:&#10;【修改内容】:更新配置文件">
+      <created>1665709780984</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665709780984</updated>
+    </task>
+    <task id="LOCAL-00005" summary="【提交类型】:BUG&#10;【quickbug_Id】:&#10;【问题描述】:&#10;【程序描述】:&#10;【修改内容】:更新授权记录">
+      <created>1665712962431</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665712962431</updated>
+    </task>
+    <task id="LOCAL-00006" summary="【提交类型】:BUG&#10;【quickbug_Id】:&#10;【问题描述】:&#10;【程序描述】:&#10;【修改内容】:新增kdtr授权管理记录">
+      <created>1669868369384</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669868369384</updated>
+    </task>
+    <task id="LOCAL-00007" summary="【提交类型】:其他&#10;【quickbug_Id】:&#10;【问题描述】:&#10;【程序描述】:&#10;【修改内容】:更新授权管理记录">
+      <created>1673409507763</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673409507763</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="【提交类型】:BUG&#10;【quickbug_Id】:&#10;【问题描述】:&#10;【程序描述】:&#10;【修改内容】:新增KD,KT产品license文件目录" />
+    <MESSAGE value="【提交类型】:BUG&#10;【quickbug_Id】:&#10;【问题描述】:&#10;【程序描述】:&#10;【修改内容】:更细kd,kt产品目录" />
+    <MESSAGE value="【提交类型】:BUG&#10;【quickbug_Id】:&#10;【问题描述】:&#10;【程序描述】:&#10;【修改内容】:更新配置文件" />
+    <MESSAGE value="【提交类型】:BUG&#10;【quickbug_Id】:&#10;【问题描述】:&#10;【程序描述】:&#10;【修改内容】:更新授权记录" />
+    <MESSAGE value="【提交类型】:BUG&#10;【quickbug_Id】:&#10;【问题描述】:&#10;【程序描述】:&#10;【修改内容】:新增kdtr授权管理记录" />
+    <MESSAGE value="【提交类型】:其他&#10;【quickbug_Id】:&#10;【问题描述】:&#10;【程序描述】:&#10;【修改内容】:更新授权管理记录" />
+    <option name="LAST_COMMIT_MESSAGE" value="【提交类型】:其他&#10;【quickbug_Id】:&#10;【问题描述】:&#10;【程序描述】:&#10;【修改内容】:更新授权管理记录" />
+  </component>
+</project>

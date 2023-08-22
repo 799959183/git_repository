@@ -1,0 +1,220 @@
+package cn.zifangsky;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Properties;
+
+import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import cn.zifangsky.license.AbstractServerInfos;
+import cn.zifangsky.license.IdGenerator;
+import cn.zifangsky.license.LicenseCheckModel;
+import cn.zifangsky.license.LicenseCreator;
+import cn.zifangsky.license.LicenseCreatorParam;
+import cn.zifangsky.license.LinuxServerInfos;
+import cn.zifangsky.license.WindowsServerInfos;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = ServerDemoApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+public class ServerDemoApplicationTests {
+
+	/**
+	 * 目前是通过注解的形式将配置文件注入的类中，这种方式的好处是方便，缺点是不同产品配置文件多了之后很容易出现错误；
+	 * 20220810 赵亚舟改为 通过代码的方式读取不同产品的配置文件来生成授权文件
+	 *
+	 */
+
+    /**
+     * 证书生成路径
+     */
+//    @Value("${license.licensePath}")
+    private String licensePath;
+
+//    @Value("${license.priPath}")
+    private String priPath;
+
+//    @Value("${license.subject}")
+    private String subject;
+
+//    @Value("${license.privateAlias}")
+    private String privateAlias;
+
+//    @Value("${license.keyPass}")
+    private String keyPass;
+
+//    @Value("${license.storePass}")
+    private String storePass;
+
+    /*
+     * @Value("${license.issuedTime}") private String issuedTime;
+     *
+     * @Value("${license.expiryTime}") private String expiryTime;
+     */
+
+//    @Value("${license.day}")
+    private String day;
+
+//    @Value("${license.consumerType}")
+    private String consumerType;
+
+//    @Value("${license.consumerAmount}")
+    private Integer consumerAmount;
+
+//    @Value("${license.description}")
+    private String description;
+
+//    @Value("${license.ips}")
+    private String ips;
+
+//    @Value("${license.cpuSerial}")
+    private String cpuSerial;
+
+//    @Value("${license.macAddress}")
+    private String macAddress;
+
+//    @Value("${license.mainBoardSerial}")
+    private String mainBoardSerial;
+
+
+//    @Value("${license.endTime}")
+    private String endTime;
+
+
+//    @Value("${license.startTime}")
+    private String startTime;
+
+
+    @Test
+    public void contextLoads() throws ParseException, IOException {
+		/**
+		 * 读取配置文件，将授权文件属性读取方式改为代码方式
+		 */
+        initLicenseParameter("config/KeyStateService/license-config.properties");
+
+        DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        LicenseCreatorParam param = new LicenseCreatorParam();
+        param.setSubject(subject);  // 证书subject
+        param.setPrivateAlias(privateAlias);  //密钥别称
+        param.setKeyPass(keyPass);  //密钥密码（需要妥善保管，不能让使用者知道）
+        param.setStorePass(storePass); //访问秘钥库的密码
+        ClassPathResource classPathResource = new ClassPathResource("privateKeys.keystore");
+        File file = classPathResource.getFile();
+
+//        param.setPrivateKeysStorePath(System.getProperty("user.dir") + "\\" + priPath);  //密钥库存储路径
+        param.setPrivateKeysStorePath(file.getPath());  //密钥库存储路径
+        /*
+         * param.setIssuedTime(format1.parse(issuedTime)); //证书生效时间
+         * param.setExpiryTime(format1.parse(expiryTime)); //证书失效时间
+         */
+        param.setConsumerType(consumerType); //用户类型
+        param.setConsumerAmount(consumerAmount);//用户数量
+        param.setDescription(description);   //描述信息
+        LicenseCheckModel licenseCheckModel = new LicenseCheckModel();
+        licenseCheckModel.setCode(IdGenerator.uuid32());  //证书唯一标识
+        licenseCheckModel.setDay(day);
+        licenseCheckModel.setEndTime(endTime);
+        licenseCheckModel.setStartTime(startTime);
+        if (StringUtils.isNotEmpty(ips)) {
+            String str[] = ips.split(",");
+            List<String> list = new ArrayList<String>();
+            for (int i = 0; i < str.length; i++) {
+                list.add(str[i]);
+            }
+            licenseCheckModel.setIpAddress(list);   //可被允许的IP地址
+
+        }
+        if (StringUtils.isNotEmpty(cpuSerial)) {
+            licenseCheckModel.setCpuSerial(cpuSerial);   //可被允许的CPU序列号
+        }
+        if (StringUtils.isNotEmpty(macAddress)) {
+            String str1[] = macAddress.split(",");
+            List<String> list = new ArrayList<String>();
+            for (int i = 0; i < str1.length; i++) {
+                list.add(str1[i]);
+            }
+            licenseCheckModel.setMacAddress(list); //可被允许的MAC地址
+        }
+
+        if (StringUtils.isNotEmpty(mainBoardSerial)) {
+            licenseCheckModel.setMainBoardSerial(mainBoardSerial); //可被允许的主板序列号
+        }
+        param.setLicenseCheckModel(licenseCheckModel);
+        if (StringUtils.isBlank(param.getLicensePath())) {
+            param.setLicensePath(licensePath);  // 证书生成路径
+        }
+        LicenseCreator licenseCreator = new LicenseCreator(param);
+        boolean result = licenseCreator.generateLicense();
+
+
+    }
+
+    private void initLicenseParameter(String licPath) throws IOException {
+        ClassPathResource classPathResource = new ClassPathResource(licPath);
+        Properties properties = new Properties();
+        properties.load(classPathResource.getInputStream());
+        licensePath = properties.getProperty("license.licensePath");
+        priPath = properties.getProperty("license.priPath");
+        subject = properties.getProperty("license.subject");
+        privateAlias = properties.getProperty("license.privateAlias");
+        keyPass = properties.getProperty("license.keyPass");
+        storePass = properties.getProperty("license.storePass");
+        day = properties.getProperty("license.day");
+        consumerType = properties.getProperty("license.consumerType");
+        consumerAmount = Integer.valueOf(properties.getProperty("license.consumerAmount"));
+        description = properties.getProperty("license.description");
+        ips = properties.getProperty("license.ips");
+        cpuSerial = properties.getProperty("license.cpuSerial");
+        macAddress = properties.getProperty("license.macAddress");
+        mainBoardSerial = properties.getProperty("license.mainBoardSerial");
+        endTime = properties.getProperty("license.endTime");
+        startTime = properties.getProperty("license.startTime");
+    }
+    /*
+     * 
+     *"可被允许的IP地址=" + ipAddress +
+      ", 可被允许的MAC地址=" + macAddress +
+      ",  可被允许的CPU序列号='" + cpuSerial + '\'' +
+      ", 可被允许的主板序列号='" + mainBoardSerial + '\'' +
+     * **/
+
+
+    @Test
+    public void getServerInfos() {
+        String osName = "";
+        //操作系统类型
+        if (StringUtils.isBlank(osName)) {
+            osName = System.getProperty("os.name");
+        }
+        osName = osName.toLowerCase();
+
+        AbstractServerInfos abstractServerInfos = null;
+
+        //根据不同操作系统类型选择不同的数据获取方法
+        if (osName.startsWith("windows")) {
+            abstractServerInfos = new WindowsServerInfos();
+        } else if (osName.startsWith("linux")) {
+            abstractServerInfos = new LinuxServerInfos();
+        } else {//其他服务器类型
+            abstractServerInfos = new LinuxServerInfos();
+        }
+        System.out.println("可被允许的IP地址" + abstractServerInfos.getServerInfos().getIpAddress());
+        System.out.println("可被允许的MAC地址" + abstractServerInfos.getServerInfos().getMacAddress());
+        System.out.println("可被允许的CPU序列号" + abstractServerInfos.getServerInfos().getCpuSerial());
+        System.out.println("可被允许的主板序列号" + abstractServerInfos.getServerInfos().getMainBoardSerial());
+
+    }
+
+
+}
